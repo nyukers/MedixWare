@@ -1,0 +1,9 @@
+DELETE FROM PATDIAG.DBF a1
+WHERE a1."DOSID" IN (
+ SELECT distinct a2."DOSID"
+ FROM PATDIAG.DBF a2
+ WHERE  a2."DOSID" NOT IN
+        (SELECT distinct a3."DOSID"
+         FROM PATDIAG.DBF a3, PATDOS.DBF a4
+         WHERE (a3."DOSID" = a4."DOSID")) )
+
