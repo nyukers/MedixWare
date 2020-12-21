@@ -1,0 +1,73 @@
+ СПРАВОЧНИКИ  MEDIXWARE 2000
+==============================================
+
+DIAG.dbf ***  Дiагнози коди
+
+NAME    TYPE    LEN DEC
+-----------------------
+GROUP      N     6  0
+CODE       C     6
+NAME       C    80
+
+DOCTOR.dbf ***  Лiкарi
+
+NAME    TYPE    LEN DEC
+-----------------------
+CODE       N     4  0
+NAME       C    30
+
+DOSLID.dbf ***  Дослiдження коди
+
+NAME    TYPE    LEN DEC
+-----------------------
+CODE       C     6
+NAME       C    40
+OD         N     4  2
+GROUP      N     6  0
+DK1        N     3  0
+DK2        N     3  0
+
+DOSTYPE.dbf ***  Протоколи дослiдженнь
+
+NAME    TYPE    LEN DEC
+-----------------------
+CODE       N     3  0
+NAME       C    20
+
+IDEAS.dbf ***
+
+NAME    TYPE    LEN DEC
+-----------------------
+PIBID      N    10  0
+PATID      N    10  0
+DOSID      N    10  0
+DIAGID     N    10  0
+
+PILGA.dbf *** Пiльги
+
+NAME    TYPE    LEN DEC
+-----------------------
+CODE       N     3  0
+NAME       C    20
+
+RAYON.dbf *** Раойни
+
+NAME    TYPE    LEN DEC
+-----------------------
+CODE       N     3  0
+NAME       C    20
+
+STATE.dbf *** Стан пiсля операцi∙
+
+NAME    TYPE    LEN DEC
+-----------------------
+CODE       N     3  0
+NAME       C    20
+
+VIDDIL.dbf *** Вiддiлення
+
+NAME    TYPE    LEN DEC
+-----------------------
+CODE       N     3  0
+CODEL      C     1
+NAME       C    20

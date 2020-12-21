@@ -1,0 +1,112 @@
+ ОСНОВНЫЕ БАЗЫ  MEDIXWARE 2000
+==============================================
+
+PIB.dbf ***   ПIБ пацiїнта
+
+NAME    TYPE    LEN DEC
+-----------------------
+PIBID      N    10  0    ID *
+PIB        C    40       ПIБ пацiїнта
+SEX        C     1       Стать:
+                         0 - Жiн
+                         1 - Чол
+BIRTH      N     4  0    Рокiв повних
+DATEIN     D     8       Дата вiдкриття
+
+
+PAT.dbf ***   Карта пацiїнта
+
+NAME    TYPE    LEN DEC
+-----------------------
+PIBID      N    10  0    ID *
+PATID      N    10  0    ID *
+DATECARD   D     8       Дата вiдкриття карти
+FIRST      C     1       Звернувся:
+                         В - вперше
+                         П - потворно
+RAYONCODE  N     4  0    Район код:
+                         CODE з RAYON.DBF
+RAYON      C    20       Район:
+                         NAME з RAYON.DBF
+PILGACODE  N     4  0    Пiльга код:
+                         CODE з PILGA.DBF
+PILGA      C    20       Пiльга:
+                         NAME з PILGA.DBF
+D_ST_CODE  N     4  0    Додатковий стан код
+                         CODE з STATE.DBF
+D_ST       C    20       Додатковий стан:
+                         NAME з STATE.DBF
+FROM       C     1       Направлений:
+                         С - Стацiонар
+                         А - Амбулаторно
+VIDDILCODE N     4  0    Вiддiлення код:
+                         CODE з VIDDIL.DBF
+VIDDIL     C    20       Вiддiлення:
+                         NAME з VIDDIL.DBF
+OPERDONE   C     1       Пicляоперацiйний:
+                         1 - так
+                         0 - нi
+OPER_ST    C     1       Стан пiсля операцi∙:
+                         0 - не визначено
+                         1 - середнiй
+                         2 - тяжкий 
+DIAGCODE   C    10       Дiагноз за направленням код:
+                         CODE з DIAG.DBF
+DIAG       C    40       Дiагноз за направленням:
+                         NAME з DIAG.DBF
+DOCTORCODE N     2  0    Лiкарь код:
+                         CODE з DOCTOR.DBF
+DOCTOR     C    20       Лiкарь:
+                         NAME з DOCTOR.DBF
+
+
+
+PATDOS.dbf *** Дослiдження пацiїнта за карткою
+
+
+NAME    TYPE    LEN DEC
+-----------------------
+PATID      N    10  0    ID *
+DOSID      N    10  0    ID *
+JOURNAL    N     3  0    Журнал номер:
+                         1, 2, 3, 4, 5
+
+NUMBER     C    10       Номер в журналi порядковий
+                         секцiя в IPSET.INI "JOURNAL_DOS"
+DATEIN     D     8       Дата вiдкриття
+DOSLIDCODE C     4       Код дослiдження:
+                         CODE з DOSLID.DBF
+DOSLIDA    C    50       Назва дослiдження:
+                         NAME з DOSLID.DBF
+PROTOCOL   M    10       Протокол довiльно
+TYPEPRO    C     2       Протокол детально код:
+                         CODE з DOSTYPE.DBF
+DETAPRO    B    10       Протокол детально ZIP
+
+
+PATDIAG.dbf ***  Дiагноз за дослiдженням
+
+NAME    TYPE    LEN DEC
+-----------------------
+DOSID      N    10  0    ID *
+DIAGID     N    10  0    ID *
+DATEIN     D     8       Дата вводу
+DIAGCODE   C    10       Дiагноз дослiдження код:
+                         CODE з DIAG.DBF
+GROUP      N     6  0    Група дiагноза дослiдження код:
+                         GROUP з DIAG.DBF
+DIAG       C    40       Дiагноз дослiдження:
+                         NAME з DIAG.DBF
+
+
+
+PATIMG.dbf *** Зображення за дiагнозом
+
+NAME    TYPE    LEN DEC
+-----------------------
+DIAGID     N    10  0    ID *
+SCANDATE   D     8       Дата вводу
+SCAN       B    10       Зображення
+ANOT       C    60       Анотацiя письмова
+ANOTTIF    M    10       Анотацiя графiчна
+
